@@ -7,10 +7,13 @@ return {
         config = function()
             require("catppuccin").setup({
                 flavour = "mocha", -- latte, frappe, macchiato, mocha
+                background = {
+                    light = "latte",
+                    dark = "mocha",
+                },
                 transparent_background = false,
 
                 integrations = {
-                    lualine = {},
                     treesitter = true,
                     nvimtree = true,
                     telescope = true,
@@ -19,8 +22,7 @@ return {
                 }
 
             })
-
             vim.cmd.colorscheme("catppuccin")
         end,
-    }
+    },
 }
