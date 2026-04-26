@@ -10,11 +10,12 @@ return {
                 transparent_background = false,
 
                 integrations = {
-                    lualine = true,
+                    lualine = {},
                     treesitter = true,
                     nvimtree = true,
                     telescope = true,
                     gitsigns = true,
+                    coc_nvim = true,
                 }
 
             })
