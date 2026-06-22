@@ -8,3 +8,4 @@ opt.tabstop = 4
 opt.mouse = "a"
 opt.clipboard = "unnamedplus"
 opt.termguicolors = true
+opt.showtabline = 2

@@ -20,13 +20,16 @@ vim.api.nvim_create_autocmd("VimEnter", {
             -- 1. 切换到传入的目录
             vim.cmd.cd(path)
 
-            -- 2. 关键步骤：清理 netrw/空 buffer
-            --   - 如果 Neovim 默认打开了 netrw（目录列表），这条命令会关闭它，
-            --     并创建一个新的空 buffer (enew)，为 nvim-tree 腾出空间。
-            --   - 如果已经打开了 netrw 目录，其 buffer 是唯一的，需要清理掉。
-            --   - 备注：如果第一个 `VimEnter` 的逻辑是必要的（即清理 netrw），则保留 `enew`。
-            --     如果你的 nvim-tree 配置能自动接管，可以省略这一行。这里为了兼容性保留。
+            -- 2. 关键步骤：清理 netrw/目录 buffer
+            --   - `enew` 只是切换到新 buffer，旧 buffer 仍会残留。
+            --   - netrw 的 filetype 在 VimEnter 时可能尚未设置，因此不能单靠 filetype 判断。
+            --   - 通过 buffer name 判断是否为目录，再用 `bwipeout!` 彻底抹除，防止其出现在 bufferline 中。
+            local old_buf = vim.api.nvim_get_current_buf()
+            local old_name = vim.api.nvim_buf_get_name(old_buf)
             vim.cmd("enew")
+            if vim.fn.isdirectory(old_name) == 1 or vim.bo[old_buf].filetype == "netrw" then
+                pcall(vim.cmd, "bwipeout! " .. old_buf)
+            end
 
             -- 3. 打开 nvim-tree
             require("nvim-tree.api").tree.open()

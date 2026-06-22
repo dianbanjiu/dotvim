@@ -17,6 +17,13 @@ keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<CR>")
 keymap.set("n", "<leader>fg", "<cmd>Telescope live_grep<CR>")
 keymap.set("n", "<Space><Space>", "<cmd>Telescope<CR>")
 
+--- Bufferline ---
+
+keymap.set("n", "<S-h>", ":BufferLineCyclePrev<CR>", { silent = true })
+keymap.set("n", "<S-l>", ":BufferLineCycleNext<CR>", { silent = true })
+keymap.set("n", "<leader>bp", ":BufferLineTogglePin<CR>", { silent = true })
+keymap.set("n", "<leader>bc", ":bdelete<CR>", { silent = true })
+
 --- COC ---
 -- 辅助函数：检查光标前是否为空白字符
 local function check_back_space()

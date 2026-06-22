@@ -21,6 +21,7 @@ return {
           coc_nvim = true,
           noice = true,
           notify = true,
+          bufferline = true,
         },
       }
       vim.cmd.colorscheme "catppuccin"
