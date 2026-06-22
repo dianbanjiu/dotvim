@@ -19,6 +19,8 @@ return {
           telescope = true,
           gitsigns = true,
           coc_nvim = true,
+          noice = true,
+          notify = true,
         },
       }
       vim.cmd.colorscheme "catppuccin"
