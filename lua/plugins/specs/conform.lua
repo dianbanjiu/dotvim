@@ -7,7 +7,7 @@ return {
       {
         "<leader>f",
         function()
-          require("conform").format({ async = true, lsp_fallback = true })
+          require("conform").format { async = true, lsp_fallback = true }
         end,
         mode = "",
         desc = "Format buffer",
@@ -16,7 +16,8 @@ return {
     opts = {
       formatters_by_ft = {
         lua = { "stylua" },
-        python = { "isort", "black" },
+        -- uv tool install ruff # 安装ruff
+        python = { "ruff_fix", "ruff_format" },
         javascript = { "prettierd", "prettier", stop_after_first = true },
         typescript = { "prettierd", "prettier", stop_after_first = true },
         javascriptreact = { "prettierd", "prettier", stop_after_first = true },
