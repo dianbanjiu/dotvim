@@ -4,7 +4,7 @@ return {
     cmd = "Telescope",
     dependencies = { "nvim-lua/plenary.nvim" },
     config = function()
-      require("telescope").setup({
+      require("telescope").setup {
         defaults = {
           prompt_prefix = "   ",
           selection_caret = "➜ ",
@@ -14,7 +14,7 @@ return {
             },
           },
         },
-      })
+      }
     end,
   },
 }

@@ -4,7 +4,7 @@ return {
     cmd = { "NvimTreeToggle", "NvimTreeFocus" },
     dependencies = { "nvim-tree/nvim-web-devicons" },
     config = function()
-      require("nvim-tree").setup({
+      require("nvim-tree").setup {
         view = {
           width = 30,
         },
@@ -14,14 +14,14 @@ return {
         hijack_cursor = true,
 
         update_focused_file = {
-            enable = true,
-            update_root = true,
+          enable = true,
+          update_root = true,
         },
-        
+
         actions = {
-            open_file = {
-                quit_on_open = false, -- 打开文件后不关闭tree
-            }
+          open_file = {
+            quit_on_open = false, -- 打开文件后不关闭tree
+          },
         },
         renderer = {
           highlight_git = true,
@@ -36,7 +36,7 @@ return {
         git = {
           enable = true,
         },
-      })
+      }
     end,
   },
 }

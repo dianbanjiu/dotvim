@@ -1,28 +1,27 @@
 return {
-    {
-        "catppuccin/nvim",
-        lazy = false,
-        priority = 1000,
-        name = "catppuccin",
-        config = function()
-            require("catppuccin").setup({
-                flavour = "mocha", -- latte, frappe, macchiato, mocha
-                background = {
-                    light = "latte",
-                    dark = "mocha",
-                },
-                transparent_background = false,
+  {
+    "catppuccin/nvim",
+    lazy = false,
+    priority = 1000,
+    name = "catppuccin",
+    config = function()
+      require("catppuccin").setup {
+        flavour = "mocha", -- latte, frappe, macchiato, mocha
+        background = {
+          light = "latte",
+          dark = "mocha",
+        },
+        transparent_background = false,
 
-                integrations = {
-                    treesitter = true,
-                    nvimtree = true,
-                    telescope = true,
-                    gitsigns = true,
-                    coc_nvim = true,
-                }
-
-            })
-            vim.cmd.colorscheme("catppuccin")
-        end,
-    },
+        integrations = {
+          treesitter = true,
+          nvimtree = true,
+          telescope = true,
+          gitsigns = true,
+          coc_nvim = true,
+        },
+      }
+      vim.cmd.colorscheme "catppuccin"
+    end,
+  },
 }
