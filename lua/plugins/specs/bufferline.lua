@@ -38,7 +38,7 @@ return {
           persist_buffer_sort = true,
           custom_filter = function(buf_number)
             local ft = vim.bo[buf_number].filetype
-            if ft == "NvimTree" or ft == "netrw" then
+            if ft == "NvimTree" or ft == "netrw" or ft == "snacks_picker_list" then
               return false
             end
             local name = vim.api.nvim_buf_get_name(buf_number)
@@ -56,6 +56,14 @@ return {
             reveal = { "close" },
           },
           sort_by = "insert_after_current",
+          offsets = {
+            {
+              filetype = "snacks_layout_box",
+              text = "Explorer",
+              text_align = "left",
+              separator = true,
+            },
+          },
         },
       }
     end,

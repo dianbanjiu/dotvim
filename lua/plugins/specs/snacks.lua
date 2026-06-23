@@ -8,7 +8,10 @@ return {
             terminal = { enabled = true },
             bigfile = { enabled = true },
             dashboard = { enabled = true },
-            explorer = {enabled = true},
+            explorer = {
+                enabled = true,
+                layout = { preset = "sidebar", layout = { position = "left" } },
+            },
         },
     },
 }
