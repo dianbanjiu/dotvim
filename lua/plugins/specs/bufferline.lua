@@ -29,14 +29,6 @@ return {
           truncate_names = true,
           tab_size = 18,
           diagnostics = false,
-          offsets = {
-            {
-              filetype = "NvimTree",
-              text = "File Explorer",
-              text_align = "center",
-              separator = true,
-            },
-          },
           color_icons = true,
           show_buffer_icons = true,
           show_buffer_close_icons = true,

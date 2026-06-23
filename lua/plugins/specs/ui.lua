@@ -15,7 +15,6 @@ return {
 
                 integrations = {
                     treesitter = true,
-                    nvimtree = true,
                     gitsigns = true,
                     coc_nvim = true,
                     noice = true,

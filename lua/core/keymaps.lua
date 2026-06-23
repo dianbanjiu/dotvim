@@ -5,12 +5,6 @@ keymap.set("v", "d", '"_d')
 keymap.set("n", "x", '"_x')
 keymap.set("n", "X", '"_X')
 
---- nvim tree ---
-
-keymap.set("n", "<leader>e", ":NvimTreeFocus<CR>")
-keymap.set("n", "<leader>b", ":NvimTreeToggle<CR>")
-
-
 --- Snacks ---
 
 keymap.set("n", "<leader>ff", function() Snacks.picker.files() end,   { desc = "Find Files" })
@@ -18,6 +12,7 @@ keymap.set("n", "<leader>fb", function() Snacks.picker.buffers() end, { desc = "
 keymap.set("n", "<leader>fg", function() Snacks.picker.grep() end,    { desc = "Live Grep" })
 keymap.set("n", "<Space><Space>", function() Snacks.picker() end,     { desc = "Snacks Picker" })
 keymap.set("n", "<C-r>", function() Snacks.picker.projects() end,     { desc = "Projects" })
+keymap.set("n", "<leader>e", function() Snacks.explorer() end,         { desc = "Explorer" })
 keymap.set({ "n", "t" }, "<C-\\>", function() Snacks.terminal.toggle(nil, { win = { position = "bottom" } }) end, { desc = "Toggle Terminal" })
 
 --- Bufferline ---
